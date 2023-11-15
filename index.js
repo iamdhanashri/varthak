@@ -19,8 +19,8 @@ app.get("/",(req,res)=>{
 app.use("/user",userRouter)
 
 app.use(authenticate)
-app.use(apiLogger)
-app.use(checkUserRole)
+// app.use(apiLogger)
+// app.use(checkUserRole)
 
 app.use("/book",bookRouter)
 

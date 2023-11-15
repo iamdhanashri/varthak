@@ -10,7 +10,7 @@ const bookRouter=express.Router()
 
 // add book 
 
-bookRouter.post("/books", authenticate, checkUserRole('creator'), async (req, res) => {
+bookRouter.post("/books" , async (req, res) => {
     try {
     //   const { title, author } = req.body;
       const newBook = new BookModel(req.body);
@@ -25,7 +25,7 @@ bookRouter.post("/books", authenticate, checkUserRole('creator'), async (req, re
 
 //   get book of perticular auther
 
-bookRouter.get("/books", authenticate, checkUserRole('viewer'), async (req, res) => {
+bookRouter.get("/books", async (req, res) => {
     try {
       const books = await BookModel.find();
       res.json(books);
@@ -38,7 +38,7 @@ bookRouter.get("/books", authenticate, checkUserRole('viewer'), async (req, res)
 
 //   get all book 
 
-bookRouter.get("/books/all", authenticate, checkUserRole('view-all'), async (req, res) => {
+bookRouter.get("/books/all", async (req, res) => {
     try {
       const books = await BookModel.find();
       res.json(books);

@@ -1,4 +1,3 @@
-
 const apiLogger = (req, res, next) => {
     const start = Date.now();
   
@@ -20,5 +19,5 @@ const apiLogger = (req, res, next) => {
   }
   
   module.exports = {
-    apiLogger,
+    apiLogger
   }

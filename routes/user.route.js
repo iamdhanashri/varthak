@@ -28,7 +28,13 @@ userRouter.post("/register",(req,res)=>{
         res.send("User registration failed")
     }
     })
-    
+
+
+
+    userRouter.get("/get", async (req, res) => {
+        const notes = await UserModel.find()
+        res.send(notes);
+    })
     
     // login 
     
